@@ -1156,3 +1156,4 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 
 	.include "data/maps/QuarrysEdge/scripts.inc"
+	.include "data/maps/QuarryApproach/scripts.inc"

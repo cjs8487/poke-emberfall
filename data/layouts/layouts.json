@@ -4414,12 +4414,22 @@
     {
       "id": "LAYOUT_QUARRYS_EDGE",
       "name": "QuarrysEdge_Layout",
-      "width": 25,
+      "width": 30,
       "height": 25,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/QuarrysEdge/border.bin",
       "blockdata_filepath": "data/layouts/QuarrysEdge/map.bin"
+    },
+    {
+      "id": "LAYOUT_QUARRY_APPROACH",
+      "name": "QuarryApproach_Layout",
+      "width": 30,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/QuarryApproach/border.bin",
+      "blockdata_filepath": "data/layouts/QuarryApproach/map.bin"
     }
   ]
 }
