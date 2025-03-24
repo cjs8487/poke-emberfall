@@ -2417,7 +2417,7 @@
       "width": 58,
       "height": 26,
       "primary_tileset": "gTileset_General",
-      "secondary_tileset": "0",
+      "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/UnusedOutdoorArea/border.bin",
       "blockdata_filepath": "data/layouts/UnusedOutdoorArea/map.bin"
     },
@@ -4440,6 +4440,26 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/CalderanCrossroads/border.bin",
       "blockdata_filepath": "data/layouts/CalderanCrossroads/map.bin"
+    },
+    {
+      "id": "LAYOUT_PYROCORE_INSTITUTE_1F_S_ENTRY",
+      "name": "PyrocoreInstitute_1F_S_Entry_Layout",
+      "width": 21,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/PyrocoreInstitute_1F_S_Entry/border.bin",
+      "blockdata_filepath": "data/layouts/PyrocoreInstitute_1F_S_Entry/map.bin"
+    },
+    {
+      "id": "LAYOUT_PYROCORE_INSTITUTE_1F",
+      "name": "PyrocoreInstitute_1F_Layout",
+      "width": 55,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/PyrocoreInstitute_1F/border.bin",
+      "blockdata_filepath": "data/layouts/PyrocoreInstitute_1F/map.bin"
     }
   ]
 }

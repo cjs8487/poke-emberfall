@@ -1,34 +1,28 @@
 {
-  "id": "MAP_CALDERAN_CROSSROADS",
-  "name": "CalderanCrossroads",
-  "layout": "LAYOUT_CALDERAN_CROSSROADS",
+  "id": "MAP_PYROCORE_INSTITUTE_1F",
+  "name": "PyrocoreInstitute_1F",
+  "layout": "LAYOUT_PYROCORE_INSTITUTE_1F",
   "music": "MUS_DUMMY",
   "region_map_section": "MAPSEC_ABANDONED_SHIP",
   "requires_flash": false,
   "weather": "WEATHER_NONE",
   "map_type": "MAP_TYPE_NONE",
-  "allow_cycling": true,
+  "allow_cycling": false,
   "allow_escaping": false,
-  "allow_running": true,
+  "allow_running": false,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": [
-    {
-      "map": "MAP_QUARRY_APPROACH",
-      "offset": 20,
-      "direction": "down"
-    }
-  ],
+  "connections": 0,
   "object_events": [
 
   ],
   "warp_events": [
     {
-      "x": 41,
-      "y": 6,
+      "x": 27,
+      "y": 47,
       "elevation": 0,
       "dest_map": "MAP_PYROCORE_INSTITUTE_1F_S_ENTRY",
-      "dest_warp_id": "0"
+      "dest_warp_id": "1"
     }
   ],
   "coord_events": [

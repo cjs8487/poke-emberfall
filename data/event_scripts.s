@@ -1159,3 +1159,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/QuarryApproach/scripts.inc"
 
 	.include "data/maps/CalderanCrossroads/scripts.inc"
+
+	.include "data/maps/PyrocoreInstitute_1F_S_Entry/scripts.inc"
+
+	.include "data/maps/PyrocoreInstitute_1F/scripts.inc"

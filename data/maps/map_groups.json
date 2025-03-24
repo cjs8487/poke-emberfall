@@ -1,6 +1,7 @@
 {
   "group_order": [
     "gMapGroup_TownsAndRoutes",
+    "gMapGroup_IndoorCaldera",
     "gMapGroup_IndoorLittleroot",
     "gMapGroup_IndoorOldale",
     "gMapGroup_IndoorDewford",
@@ -96,6 +97,10 @@
     "QuarrysEdge",
     "QuarryApproach",
     "CalderanCrossroads"
+  ],
+  "gMapGroup_IndoorCaldera": [
+    "PyrocoreInstitute_1F_S_Entry",
+    "PyrocoreInstitute_1F"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",
