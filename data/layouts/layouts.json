@@ -4430,6 +4430,16 @@
       "secondary_tileset": "gTileset_Lavaridge",
       "border_filepath": "data/layouts/QuarryApproach/border.bin",
       "blockdata_filepath": "data/layouts/QuarryApproach/map.bin"
+    },
+    {
+      "id": "LAYOUT_CALDERAN_CROSSROADS",
+      "name": "CalderanCrossroads_Layout",
+      "width": 80,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/CalderanCrossroads/border.bin",
+      "blockdata_filepath": "data/layouts/CalderanCrossroads/map.bin"
     }
   ]
 }
