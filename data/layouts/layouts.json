@@ -4455,7 +4455,7 @@
       "id": "LAYOUT_PYROCORE_INSTITUTE_1F",
       "name": "PyrocoreInstitute_1F_Layout",
       "width": 35,
-      "height": 40,
+      "height": 42,
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/PyrocoreInstitute_1F/border.bin",
