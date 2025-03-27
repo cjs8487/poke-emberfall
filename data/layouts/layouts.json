@@ -4460,6 +4460,16 @@
       "secondary_tileset": "gTileset_Facility",
       "border_filepath": "data/layouts/PyrocoreInstitute_1F/border.bin",
       "blockdata_filepath": "data/layouts/PyrocoreInstitute_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_QUARRY_LAKE",
+      "name": "QuarryLake_Layout",
+      "width": 60,
+      "height": 75,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/QuarryLake/border.bin",
+      "blockdata_filepath": "data/layouts/QuarryLake/map.bin"
     }
   ]
 }

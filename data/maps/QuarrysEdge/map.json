@@ -17,6 +17,11 @@
       "map": "MAP_QUARRY_APPROACH",
       "offset": 0,
       "direction": "up"
+    },
+    {
+      "map": "MAP_QUARRY_LAKE",
+      "offset": -30,
+      "direction": "right"
     }
   ],
   "object_events": [
