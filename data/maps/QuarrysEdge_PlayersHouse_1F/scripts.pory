@@ -1,0 +1,35 @@
+mapscripts QuarrysEdge_PlayersHouse_1F_MapScripts {}
+
+script QuarrysEdge_PlayersHouse_1F_EventScript_Mom {
+    lockall
+    switch (var(VAR_INTRO_STATE)) {
+        case 0:
+        break
+    }
+    releaseall
+    end
+}
+
+script QuarrysEdge_PlayersHouse_1F_EventScript_MomNightBefore {
+    msgbox(QuarrysEdge_PlayersHouse_1F_Text_MomGoToBed)
+}
+
+script QuarrysEdge_PlayersHouse_1F_EventScript_DoorBlock {
+    msgbox(QuarrysEdge_PlayersHouse_1F_Text_DontLeave)
+    applymovement(OBJ_EVENT_ID_PLAYER, walk_up)
+}
+
+text QuarrysEdge_PlayersHouse_1F_Text_MomGoToBed {
+    format(
+        "{PLAYER}! What are you still doing up?\p"
+        "It's getting late, and your supposed to go out and help the professor at the lake tomorrow.\p"
+        "You wouldn't want to oversleep and miss him again now would you?"
+    )
+}
+
+text QuarrysEdge_PlayersHouse_1F_Text_DontLeave {
+    format(
+        "{PLAYER}! Where do you think you're going?\p"
+        "Off to bed so you can meet with the professor bright and early tomorrow."
+    )
+}

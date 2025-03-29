@@ -1,1 +1,4 @@
 mapscripts QuarrysEdge_MapScripts {}
+
+script QuarrysEdge_Test {
+}

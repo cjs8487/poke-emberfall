@@ -1,0 +1,35 @@
+mapscripts QuarrysEdge_PlayersHouse_2F_MapScripts {
+    MAP_SCRIPT_ON_RESUME {
+        if (var(VAR_INTRO_STATE) == 0) {
+            lockall
+            fadescreen(FADE_TO_BLACK)
+            delay(30)
+            msgbox(format("{PLAYER}! You're going to be late to helping the professor!"))
+            waitmessage
+            delay(30)
+            setvar(VAR_INTRO_STATE, 1)
+            fadescreen(FADE_FROM_BLACK)
+            releaseall
+        }
+        end
+    }
+}
+
+script QuarrysEdge_PlayersHouse_2F_StartStory {
+	lockall
+	releaseall
+	end
+}
+
+script QuarrysEdge_PlayersHouse_2F_WallClock {
+    lockall
+    if (flag(FLAG_SET_WALL_CLOCK)) {
+        call(PlayersHouse_2F_EventScript_CheckWallClock)
+    }
+    msgbox(PlayersHouse_2F_Text_ClockIsStopped)
+    call(PlayersHouse_2F_EventScript_SetWallClock)
+    delay(30)
+    setflag(FLAG_SET_WALL_CLOCK)
+    releaseall
+    end
+}

@@ -101,7 +101,9 @@
   ],
   "gMapGroup_IndoorCaldera": [
     "PyrocoreInstitute_1F_S_Entry",
-    "PyrocoreInstitute_1F"
+    "PyrocoreInstitute_1F",
+    "QuarrysEdge_PlayersHouse_1F",
+    "QuarrysEdge_PlayersHouse_2F"
   ],
   "gMapGroup_IndoorLittleroot": [
     "LittlerootTown_BrendansHouse_1F",

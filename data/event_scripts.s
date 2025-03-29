@@ -1165,3 +1165,7 @@ EventScript_VsSeekerChargingDone::
 	.include "data/maps/PyrocoreInstitute_1F/scripts.inc"
 
 	.include "data/maps/QuarryLake/scripts.inc"
+
+	.include "data/maps/QuarrysEdge_PlayersHouse_1F/scripts.inc"
+
+	.include "data/maps/QuarrysEdge_PlayersHouse_2F/scripts.inc"
