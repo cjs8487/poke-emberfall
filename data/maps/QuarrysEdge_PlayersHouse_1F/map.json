@@ -14,7 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": 0,
   "object_events": [
-
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOM",
+      "x": 2,
+      "y": 3,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "QuarrysEdge_PlayersHouse_1F_EventScript_Mom",
+      "flag": "0"
+    }
   ],
   "warp_events": [
     {
@@ -40,7 +52,24 @@
     }
   ],
   "coord_events": [
-
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_INTRO_STATE",
+      "var_value": "1",
+      "script": "QuarrysEdge_PlayersHouse_1F_EventScript_DoorBlock"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 8,
+      "elevation": 0,
+      "var": "VAR_INTRO_STATE",
+      "var_value": "1",
+      "script": "QuarrysEdge_PlayersHouse_1F_EventScript_DoorBlock"
+    }
   ],
   "bg_events": [
 

@@ -1,4 +1,11 @@
 mapscripts QuarrysEdge_MapScripts {}
 
-script QuarrysEdge_Test {
-}
+//  VAR_INTRO_STATE
+//      0: No introduction progress made
+//      1: Mom intro complete
+//      2: Slept upstairs
+//      3: Woken up by mom, told to set clock
+//      4: Clock set
+//      5: Entered Quarry Lake
+//      6: In starter selection
+//      7: Starter selected

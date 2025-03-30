@@ -1,22 +1,46 @@
-mapscripts QuarrysEdge_PlayersHouse_1F_MapScripts {}
+const MOM = 1
+
+mapscripts QuarrysEdge_PlayersHouse_1F_MapScripts {
+    MAP_SCRIPT_ON_FRAME_TABLE [
+        VAR_INTRO_STATE, 0 {
+            lockall
+            delay(30)
+            applymovement(MOM, Common_Movement_ExclamationMark)
+            msgbox(QuarrysEdge_PlayersHouse_1F_Text_MomIntro, MSGBOX_NPC)
+            waitmessage
+            setvar(VAR_INTRO_STATE, 1)
+            releaseall
+        }
+    ]
+}
 
 script QuarrysEdge_PlayersHouse_1F_EventScript_Mom {
     lockall
     switch (var(VAR_INTRO_STATE)) {
         case 0:
-        break
+        case 1:
+            call(QuarrysEdge_PlayersHouse_1F_EventScript_MomNightBefore)
     }
+    waitmessage
     releaseall
     end
 }
 
 script QuarrysEdge_PlayersHouse_1F_EventScript_MomNightBefore {
-    msgbox(QuarrysEdge_PlayersHouse_1F_Text_MomGoToBed)
+    msgbox(QuarrysEdge_PlayersHouse_1F_Text_MomGoToBed, MSGBOX_NPC)
 }
 
 script QuarrysEdge_PlayersHouse_1F_EventScript_DoorBlock {
-    msgbox(QuarrysEdge_PlayersHouse_1F_Text_DontLeave)
-    applymovement(OBJ_EVENT_ID_PLAYER, walk_up)
+    msgbox(QuarrysEdge_PlayersHouse_1F_Text_DontLeave, MSGBOX_NPC)
+    applymovement(OBJ_EVENT_ID_PLAYER, QuarrysEdge_PlayersHouse_1F_Move_AwayFromDoor)
+    waitmovement(0)
+}
+
+text QuarrysEdge_PlayersHouse_1F_Text_MomIntro {
+    format(
+        "Oh my! I hadn't relized how late it had gotten.\p"
+        "{PLAYER}! It's time for you to head to bed. You've got to get up bright and early tomorrow to help the professor!"
+    )
 }
 
 text QuarrysEdge_PlayersHouse_1F_Text_MomGoToBed {
@@ -30,6 +54,10 @@ text QuarrysEdge_PlayersHouse_1F_Text_MomGoToBed {
 text QuarrysEdge_PlayersHouse_1F_Text_DontLeave {
     format(
         "{PLAYER}! Where do you think you're going?\p"
-        "Off to bed so you can meet with the professor bright and early tomorrow."
+        "Off to bed so you can meet with the professor bright and early tomorrow!"
     )
+}
+
+movement QuarrysEdge_PlayersHouse_1F_Move_AwayFromDoor {
+    walk_up
 }

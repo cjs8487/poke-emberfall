@@ -1,27 +1,59 @@
+// Temp flag usage
+// FLAG_TEMP_1 - Hide mom upstairs
+
+const MOM = 1
+
 mapscripts QuarrysEdge_PlayersHouse_2F_MapScripts {
-    MAP_SCRIPT_ON_RESUME {
-        if (var(VAR_INTRO_STATE) == 0) {
-            lockall
-            fadescreen(FADE_TO_BLACK)
-            delay(30)
-            msgbox(format("{PLAYER}! You're going to be late to helping the professor!"))
-            waitmessage
-            delay(30)
-            setvar(VAR_INTRO_STATE, 1)
-            fadescreen(FADE_FROM_BLACK)
-            releaseall
-        }
-        end
+    MAP_SCRIPT_ON_TRANSITION {
+        // Mom should always be hidden upstairs by default
+        setflag(FLAG_TEMP_1)
     }
 }
 
-script QuarrysEdge_PlayersHouse_2F_StartStory {
-	lockall
-	releaseall
-	end
+script QuarrysEdge_PLayersHouse_2F_EventScript_Sleep {
+    lockall
+
+    // dream sequence
+    fadescreen(FADE_TO_BLACK)
+    delay(60)
+    playmoncry(SPECIES_MALAMAR, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    delay(30)
+    playmoncry(SPECIES_HEATRAN, CRY_MODE_ENCOUNTER)
+    waitmoncry
+    delay(120)
+
+    // Mom wakes us up
+    face_down
+    msgbox(QuarrysEdge_PlayersHouse_2F_Text_WakeUp, MSGBOX_NPC)
+    waitmessage
+    fadescreen(FADE_FROM_BLACK)
+
+    // Mom enters
+    playse(SE_EXIT)
+    addobject(MOM)
+    applymovement(MOM, QuarrysEdge_PlayersHouse_2F_Move_MomEnters)
+    msgbox(QuarrysEdge_PlayersHouse_2F_Text_SetClock, MSGBOX_NPC)
+    waitmessage
+
+    // Mom questions us about the dream
+    applymovement(MOM,QuarrysEdge_PlayersHouse_2F_Move_MomApproaches)
+    waitmovement(MOM)
+    msgbox(QuarrysEdge_PlayersHouse_2F_Text_MomBadDream)
+    waitmessage
+
+    // Mom exits
+    applymovement(MOM, QuarrysEdge_PlayersHouse_2F_Move_MomExits)
+    waitmovement(0)
+    playse(SE_EXIT)
+    removeobject(MOM)
+
+    // Cleanup/End
+    setvar(VAR_INTRO_STATE, 3)
+    releaseall
 }
 
-script QuarrysEdge_PlayersHouse_2F_WallClock {
+script QuarrysEdge_PlayersHouse_2F_EventScript_WallClock {
     lockall
     if (flag(FLAG_SET_WALL_CLOCK)) {
         call(PlayersHouse_2F_EventScript_CheckWallClock)
@@ -30,6 +62,61 @@ script QuarrysEdge_PlayersHouse_2F_WallClock {
     call(PlayersHouse_2F_EventScript_SetWallClock)
     delay(30)
     setflag(FLAG_SET_WALL_CLOCK)
+    setvar(VAR_INTRO_STATE, 4)
     releaseall
     end
+}
+
+script QuarrysEdge_PlayersHouse_2F_EventScript_SetClockBeforeLeaving {
+    msgbox(QuarrysEdge_PlayersHouse_2F_Text_SetClockBeforeLeaving)
+    waitmessage
+    applymovement(OBJ_EVENT_ID_PLAYER, QuarrysEdge_PlayersHouse_2F_Move_AwayFromStairs)
+    waitmovement(0)
+}
+
+text QuarrysEdge_PlayersHouse_2F_Text_WakeUp {
+    format(
+        "{PLAYER}!\p"
+        "You're going to be late! The professor is already waiting for you at the lake"
+    )
+}
+
+text QuarrysEdge_PlayersHouse_2F_Text_SetClock {
+    format(
+        "Is your clock acting up again?\p"
+        "Be sure to reset it on your way out. Hopefully it will stay set this time..."
+    )
+}
+
+text QuarrysEdge_PlayersHouse_2F_Text_SetClockBeforeLeaving {
+    format(
+        "Don't forget to set your clock {PLAYER}!"
+    )
+}
+
+text QuarrysEdge_PlayersHouse_2F_Text_MomBadDream {
+    format(
+        "Whawt's wrong {PLAYER}?\p"
+        "...\p"
+        "Another bad dream, huh? You've been having a lot of those lately.\p"
+        "I'm sure they're harmless, but if you're worried you could head down to Obsidian Gate to see the psychic."
+    )
+}
+
+movement QuarrysEdge_PlayersHouse_2F_Move_AwayFromStairs {
+    walk_down
+}
+
+movement QuarrysEdge_PlayersHouse_2F_Move_MomEnters {
+    walk_down * 2
+}
+
+movement QuarrysEdge_PlayersHouse_2F_Move_MomApproaches {
+    walk_down * 2
+    walk_left * 5
+}
+
+movement QuarrysEdge_PlayersHouse_2F_Move_MomExits {
+    walk_right * 5
+    walk_up * 4
 }
