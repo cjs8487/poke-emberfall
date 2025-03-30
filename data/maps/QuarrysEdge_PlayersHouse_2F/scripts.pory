@@ -54,6 +54,9 @@ script QuarrysEdge_PLayersHouse_2F_EventScript_Sleep {
 }
 
 script QuarrysEdge_PlayersHouse_2F_EventScript_WallClock {
+    if (var(VAR_INTRO_STATE) != 3) {
+        end
+    }
     lockall
     if (flag(FLAG_SET_WALL_CLOCK)) {
         call(PlayersHouse_2F_EventScript_CheckWallClock)
@@ -96,7 +99,7 @@ text QuarrysEdge_PlayersHouse_2F_Text_SetClockBeforeLeaving {
 
 text QuarrysEdge_PlayersHouse_2F_Text_MomBadDream {
     format(
-        "Whawt's wrong {PLAYER}?\p"
+        "What's wrong {PLAYER}?\p"
         "...\p"
         "Another bad dream, huh? You've been having a lot of those lately.\p"
         "I'm sure they're harmless, but if you're worried you could head down to Obsidian Gate to see the psychic."
@@ -108,7 +111,7 @@ movement QuarrysEdge_PlayersHouse_2F_Move_AwayFromStairs {
 }
 
 movement QuarrysEdge_PlayersHouse_2F_Move_MomEnters {
-    walk_down * 2
+    walk_down * 1
 }
 
 movement QuarrysEdge_PlayersHouse_2F_Move_MomApproaches {
@@ -118,5 +121,5 @@ movement QuarrysEdge_PlayersHouse_2F_Move_MomApproaches {
 
 movement QuarrysEdge_PlayersHouse_2F_Move_MomExits {
     walk_right * 5
-    walk_up * 4
+    walk_up * 3
 }
